@@ -1,4 +1,4 @@
-const API_BASE = "https://alert-backend-3xyz.onrender.com";  // ✅ already correct
+const API_BASE = "https://alert-backend-3xyz.onrender.com";
 
 window.onload = () => {
   if (window.location.pathname.includes("alerts.html")) {
