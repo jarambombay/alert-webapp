@@ -1,11 +1,12 @@
-const API_BASE = "https://alert-backend-3xyz.onrender.com";
+const API_BASE = "https://alert-backend-3xyz.onrender.com";  // ✅ already correct
+
 window.onload = () => {
   if (window.location.pathname.includes("alerts.html")) {
-    fetch(`${API_BASE}/alerts`)
+    fetch(`${API_BASE}/alerts`) // ✅ FIXED
       .then((res) => res.json())
       .then((data) => {
         const container = document.getElementById("alerts");
-        container.innerHTML = data.map(a => \`<p><strong>\${a.region}</strong>: \${a.message}</p>\`).join("");
+        container.innerHTML = data.map(a => `<p><strong>${a.region}</strong>: ${a.message}</p>`).join("");
       });
   }
 
@@ -18,11 +19,14 @@ window.onload = () => {
 
       await fetch(`${API_BASE}/alerts`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json"
+        },
         body: JSON.stringify({ region, message })
       });
 
-      alert("Alert sent!");
+      alert("Alert submitted!");
+      window.location.reload();
     });
   }
 };
