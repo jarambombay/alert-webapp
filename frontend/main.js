@@ -1,4 +1,4 @@
-// Fetch alerts from backend
+const API_BASE = "https://alert-backend-3xyz.onrender.com";
 window.onload = () => {
   if (window.location.pathname.includes("alerts.html")) {
     fetch("http://localhost:8000/alerts")
