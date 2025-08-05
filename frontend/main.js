@@ -1,7 +1,7 @@
 const API_BASE = "https://alert-backend-3xyz.onrender.com";
 window.onload = () => {
   if (window.location.pathname.includes("alerts.html")) {
-    fetch("http://localhost:8000/alerts")
+    fetch(`${API_BASE}/alerts`)
       .then((res) => res.json())
       .then((data) => {
         const container = document.getElementById("alerts");
@@ -16,7 +16,7 @@ window.onload = () => {
       const region = document.getElementById("region").value;
       const message = document.getElementById("message").value;
 
-      await fetch("http://localhost:8000/alerts", {
+      await fetch(`${API_BASE}/alerts`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ region, message })
