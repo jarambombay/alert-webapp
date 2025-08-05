@@ -2,7 +2,7 @@ const API_BASE = "https://alert-backend-3xyz.onrender.com";
 
 window.onload = () => {
   if (window.location.pathname.includes("alerts.html")) {
-    fetch(`${API_BASE}/alerts`) // ✅ FIXED
+    fetch(`${API_BASE}/alerts`)
       .then((res) => res.json())
       .then((data) => {
         const container = document.getElementById("alerts");
